@@ -9,7 +9,8 @@ const layoutRoutes = require('./routes/layoutRoutes');
 const app = express();
 // Allow CORS from React dev server
 app.use(cors({
-  origin: "http://localhost:5173", // your React app's origin
+  // origin: "http://localhost:5173", // your React app's origin
+  origin: 'https://viswarajvs.github.io',
   credentials: true                // if using cookies/auth headers
 }));
 app.use(express.json());
