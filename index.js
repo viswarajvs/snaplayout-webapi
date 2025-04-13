@@ -9,9 +9,8 @@ const layoutRoutes = require('./routes/layoutRoutes');
 const app = express();
 // Allow CORS from React dev server
 app.use(cors({
-  // origin: "http://localhost:5173", // your React app's origin
-  origin: 'https://viswarajvs.github.io',
-  credentials: true                // if using cookies/auth headers
+  origin: process.env.ORIGIN,
+  credentials: false                // if using cookies/auth headers
 }));
 app.use(express.json());
 
@@ -24,5 +23,5 @@ app.use('/api/layouts', layoutRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
+  console.log(`🚀 Server started`);
 });
